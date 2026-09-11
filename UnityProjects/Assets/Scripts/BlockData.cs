@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class BlockData : MonoBehaviour
+[CreateAssetMenu(menuName = "Data/Block")]
+public class BlockData : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //add extra attrabutes// 
+    [field:SerializeField] public BlockModel Model { get; private set; }
 }
