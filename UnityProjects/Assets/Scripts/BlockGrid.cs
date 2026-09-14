@@ -7,18 +7,23 @@ using Unity.VisualScripting;
 public class BlockGrid: MonoBehaviour
 {
     [SerializeField] private int width;
+    [SerializeField] private int depth;
+
     [SerializeField] private int height;
 
-    private BlockGridCell[,] grid;
+    private BlockGridCell[,,] grid;
 
     private void Start()
     {
-        grid = new BlockGridCell[width, height];
+        grid = new BlockGridCell[width, height, depth];
         for (int x = 0; x <grid.GetLength(0); x++)
         {
             for (int y = 0; y <grid.GetLength(1); y++)
             {
-                grid[x, y] = new();
+                for (int z = 0; z <grid.GetLength(2); z++)
+                {
+                    grid[x, y, z] = new();
+                }
             }
         }
     }
@@ -27,41 +32,42 @@ public class BlockGrid: MonoBehaviour
     {
         foreach (var p in allBlockPositions)
         {
-            (int x, int y) = WorldToGridCell(p);
-            grid[x, y].setBlock(block);
+            (int x, int y, int z) = WorldToGridCell(p);
+            grid[x, y, z].setBlock(block);
         } 
     }
     public bool CanBuild(List<Vector3> allBlockPositions)
     {
         foreach (var p in allBlockPositions)
         {
-            (int x, int y) = WorldToGridCell(p);
-            if (x < 0 || x >= width || y < 0 || y >= height) return false;
-            if (!grid[x, y].IsEmpty()) return false;
+            (int x, int y, int z) = WorldToGridCell(p);
+            if (x < 0 || x >= width || y < 0 || y >= height || z < 0 || z >= depth) return false;
+            if (!grid[x, y, z].IsEmpty()) return false;
         }
         return true;
     }
-    private (int x, int y) WorldToGridCell(Vector3 worldPosition)
+    private (int x, int y, int z) WorldToGridCell(Vector3 worldPosition)
     {
         int x = Mathf.FloorToInt((worldPosition - transform.position).x / BlockSystem.cellSize);
-        int y = Mathf.FloorToInt((worldPosition - transform.position).z / BlockSystem.cellSize);
-        return (x, y);
+        int y = Mathf.FloorToInt((worldPosition - transform.position).y / BlockSystem.cellSize);
+        int z = Mathf.FloorToInt((worldPosition - transform.position).z / BlockSystem.cellSize);
+        return (x, y, z);
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        if (BlockSystem.cellSize <= 0 || width <= 0 || height <= 0) return;
+        if (BlockSystem.cellSize <= 0 || width <= 0 || depth <= 0) return;
         Vector3 origin = transform.position;
-        for (int y = 0; y <= height; y++)
+        for (int z = 0; z <= depth; z++)
         {
-            Vector3 start = origin + new Vector3(0, 0.01f, y * BlockSystem.cellSize);
-            Vector3 end = origin + new Vector3(width * BlockSystem.cellSize, 0.01f, y * BlockSystem.cellSize);
+            Vector3 start = origin + new Vector3(0, 0.01f, z * BlockSystem.cellSize);
+            Vector3 end = origin + new Vector3(width * BlockSystem.cellSize, 0.01f, z * BlockSystem.cellSize);
             Gizmos.DrawLine(start, end);
         }
         for (int x = 0; x <= width; x++)
         {
             Vector3 start = origin + new Vector3(x * BlockSystem.cellSize, 0.01f, 0);
-            Vector3 end = origin + new Vector3(x * BlockSystem.cellSize, 0.01f, height * BlockSystem.cellSize);
+            Vector3 end = origin + new Vector3(x * BlockSystem.cellSize, 0.01f, depth * BlockSystem.cellSize);
             Gizmos.DrawLine(start, end);
         }
     }

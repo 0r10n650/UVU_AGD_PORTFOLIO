@@ -18,8 +18,7 @@ public class BlockSystem : MonoBehaviour
 
     private void Update()
     {
-        Vector3 mousePos = GetMouseWorldPosition();
-
+        Vector3 mousePos= GetMouseWorldPosition();
         if (preview != null)
         {
             HandlePreview(mousePos);
@@ -75,19 +74,20 @@ public class BlockSystem : MonoBehaviour
     private Vector3 GetSnappedCenterPosition(List<Vector3> allBlockPositions)
     {
         List<int> xs = allBlockPositions.Select(p => Mathf.FloorToInt(p.x)).ToList();
+        List<int> ys = allBlockPositions.Select(p => Mathf.FloorToInt(p.y)).ToList();
         List<int> zs = allBlockPositions.Select(p => Mathf.FloorToInt(p.z)).ToList();
         float centerX = (xs.Min() + xs.Max()) / 2f + cellSize / 2f;
+        float Y = ys.Min();
         float centerZ = (zs.Min() + zs.Max()) / 2f + cellSize / 2f;
-        return new(centerX, 0, centerZ);
+        return new(centerX, Y, centerZ);
     }
 
     private Vector3 GetMouseWorldPosition()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane groundPlane = new(Vector3.up, Vector3.zero);
-        if(groundPlane.Raycast(ray,out float distance))
+        if(Physics.Raycast(ray,out RaycastHit hit, 100))
         { 
-            return ray.GetPoint(distance);
+            return hit.point + hit.normal * (cellSize / 2f);
         }
         return Vector3.zero;
     }
