@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b378629948aaae746bb0acc1f1fc1c76, type: 3}
-  m_Name: StraightBlock
+  m_Name: CurveBlock
   m_EditorClassIdentifier: Assembly-CSharp::BlockData
-  <Model>k__BackingField: {fileID: 5299624262489372774, guid: ff18dc6a2c8ba8945bfc8a8451eccb97, type: 3}
+  <Model>k__BackingField: {fileID: 5299624262489372774, guid: e1fcf098d624b784dbf54e1df48d480e, type: 3}

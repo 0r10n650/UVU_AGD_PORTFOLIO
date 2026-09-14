@@ -332,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9142dec1c02aa194e9b0f9154ab913d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockSystem
-  baseBlock: {fileID: 11400000, guid: 48050e4dc47a75c43864f20918d87a96, type: 2}
-  midBlock: {fileID: 11400000, guid: ea13c6ded2f923d4bb33fc861d8f3833, type: 2}
+  baseBlock: {fileID: 11400000, guid: 0ab606f4311158d4a9be5c5d7cc8144a, type: 2}
+  midBlock: {fileID: 11400000, guid: 30af1c7f6f439d6409200711a28a80de, type: 2}
   straightBlock: {fileID: 11400000, guid: 4dcc52130be5c594abdecb3fd5825006, type: 2}
   previewPrefab: {fileID: 8823310433728701636, guid: 552d9647e4d44c645a13b8afadda97e2, type: 3}
   blockPrefab: {fileID: 2867451485312191633, guid: 179b4643b25712b4181ef7f8d1d557d7, type: 3}
