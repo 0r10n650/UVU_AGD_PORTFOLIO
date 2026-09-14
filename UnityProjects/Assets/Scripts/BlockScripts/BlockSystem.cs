@@ -23,21 +23,24 @@ public class BlockSystem : MonoBehaviour
         {
             HandlePreview(mousePos);
         }
-        else
+        
+        if (preview != null && (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3)))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                preview = CreatePreview(baseBlock, mousePos);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                preview = CreatePreview(midBlock, mousePos);
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                preview = CreatePreview(straightBlock, mousePos);
-            }
+            Destroy(preview.gameObject);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            preview = CreatePreview(baseBlock, mousePos);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            preview = CreatePreview(midBlock, mousePos);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            preview = CreatePreview(straightBlock, mousePos);
+        }
+        
     }
 
     private void HandlePreview(Vector3 mouseWorldPosition)

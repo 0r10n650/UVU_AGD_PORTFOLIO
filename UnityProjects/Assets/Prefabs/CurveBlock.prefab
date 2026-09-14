@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CurveBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1df89c5b44b68c445b6efc7fd98f8e11, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
