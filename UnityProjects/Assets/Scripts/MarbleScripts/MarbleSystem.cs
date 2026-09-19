@@ -26,7 +26,6 @@ public class MarbleSystem : MonoBehaviour
     }
     public void BeginSimulation()
     {
-        print("trying");
         marble.useGravity = true;
     }
 }

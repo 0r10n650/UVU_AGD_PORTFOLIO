@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2705919342517022703}
   - component: {fileID: 5009543292483482861}
   - component: {fileID: 8967598032271391763}
+  - component: {fileID: 4377480689262837697}
   m_Layer: 8
   m_Name: Marble
   m_TagString: Untagged
@@ -154,3 +155,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MarbleSystem
   marble: {fileID: 5009543292483482861}
+--- !u!114 &4377480689262837697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6529099998080348047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cff59e1199a14dbeca9f0a75c0109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Marble
+  data: {fileID: 11400000, guid: 4ccc61484a361864dad6d5fef01f82ff, type: 2}
