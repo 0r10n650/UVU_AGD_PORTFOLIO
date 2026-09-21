@@ -6,4 +6,9 @@ public class SimulationTrigger : MonoBehaviour
     {
         MarbleSystem.TriggerSimulation();
     }
+
+    public void OnStopButtonPressed()
+    {
+        return;
+    }
 }

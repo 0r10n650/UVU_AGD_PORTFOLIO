@@ -6,6 +6,7 @@ using System.Linq;
 public class BlockSystem : MonoBehaviour
 {
     public const float cellSize = 1f;
+    public const float verticalSize = cellSize / 2f;
 
     [SerializeField] private BlockData baseBlock;
     [SerializeField] private BlockData midBlock;
@@ -77,7 +78,7 @@ public class BlockSystem : MonoBehaviour
     private Vector3 GetSnappedCenterPosition(List<Vector3> allBlockPositions)
     {
         List<int> xs = allBlockPositions.Select(p => Mathf.FloorToInt(p.x)).ToList();
-        List<int> ys = allBlockPositions.Select(p => Mathf.FloorToInt(p.y)).ToList();
+        List<float> ys = allBlockPositions.Select(p => Mathf.Floor(p.y / verticalSize) * verticalSize).ToList();
         List<int> zs = allBlockPositions.Select(p => Mathf.FloorToInt(p.z)).ToList();
         float centerX = (xs.Min() + xs.Max()) / 2f + cellSize / 2f;
         float Y = ys.Min();
@@ -90,7 +91,7 @@ public class BlockSystem : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray,out RaycastHit hit, 100))
         { 
-            return hit.point + hit.normal * (cellSize / 2f);
+            return hit.point + hit.normal * (verticalSize / 2f);
         }
         return Vector3.zero;
     }

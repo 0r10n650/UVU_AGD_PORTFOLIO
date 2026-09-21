@@ -49,7 +49,7 @@ public class BlockGrid: MonoBehaviour
     private (int x, int y, int z) WorldToGridCell(Vector3 worldPosition)
     {
         int x = Mathf.FloorToInt((worldPosition - transform.position).x / BlockSystem.cellSize);
-        int y = Mathf.FloorToInt((worldPosition - transform.position).y / BlockSystem.cellSize);
+        int y = Mathf.FloorToInt((worldPosition - transform.position).y / (BlockSystem.cellSize / 2));
         int z = Mathf.FloorToInt((worldPosition - transform.position).z / BlockSystem.cellSize);
         return (x, y, z);
     }
