@@ -24,6 +24,16 @@ public class MarbleData
         material
 
     }
+    public MarbleData(Color color, int age = 0, int shatter = 0, Element element = Element.None, int shine = 0, float opacity = 0, Material material = null)
+    {
+        AgeAmount = age;
+        ShatterAmount = shatter;
+        Cur_Color = color;
+        Cur_Element = element;
+        ShineAmount = shine;
+        Opacity = opacity;
+        Cur_Material = material;
+    }
     public void ChangeStat(stat desired_stat, float amount, Element element, Color color, Material material)
     {
         switch (desired_stat)

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 201223167}
   - component: {fileID: 201223168}
   m_Layer: 7
-  m_Name: IncreaseShineBox
+  m_Name: ChangeStatBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 201223165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 2.5, y: 0.5, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,6 +185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30d4be1cd56cd84389662628aa9267e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockMarbleUpdater
+  ChosenStat: 0
+  Amount: 1
+  NewElement: 5
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
+  NewMaterial: {fileID: 0}
 --- !u!1 &281981758
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Start Run
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -352,6 +357,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 624142447}
+  - {fileID: 1798110647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597024301
@@ -368,7 +374,7 @@ GameObject:
   - component: {fileID: 597024303}
   - component: {fileID: 597024306}
   m_Layer: 5
-  m_Name: StartSimButton
+  m_Name: ToggleRunButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,8 +445,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 597024306}
-        m_TargetAssemblyTypeName: SimulationTrigger, Assembly-CSharp
-        m_MethodName: OnStartButtonPressed
+        m_TargetAssemblyTypeName: ToggleRunButton, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -497,9 +503,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 597024301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da38d2624090b8d4da3cefa2bae65ed7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c17a09ae84b521449f4c213629b92d6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimulationTrigger
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleRunButton
+  Manager: {fileID: 1798110648}
+  ButtonText: {fileID: 281981760}
 --- !u!1 &624142446
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +882,50 @@ Transform:
   - {fileID: 1880824448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1798110646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798110647}
+  - component: {fileID: 1798110648}
+  m_Layer: 0
+  m_Name: MarbleRunManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1798110647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798110646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 549412033}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798110648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798110646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a1759ac06a7f4b978d071ad6df5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MarbleRunManager
 --- !u!1 &1872252116
 GameObject:
   m_ObjectHideFlags: 0

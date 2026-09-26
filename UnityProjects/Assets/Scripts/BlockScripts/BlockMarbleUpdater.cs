@@ -13,7 +13,7 @@ public class MarbleUpdater : MonoBehaviour
         Marble marble = other.GetComponent<Marble>();
         if (marble != null)
         {
-            
+            marble.Data.ChangeStat(ChosenStat, Amount, NewElement, NewColor, NewMaterial);
         }
     }
 }
