@@ -4,5 +4,6 @@ using UnityEngine;
 public class BlockData : ScriptableObject
 {
     //add extra attrabutes// 
+    [field: SerializeField] public Material Cur_Material { get; private set; }
     [field:SerializeField] public BlockModel Model { get; private set; }
 }

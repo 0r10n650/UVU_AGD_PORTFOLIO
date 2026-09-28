@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b378629948aaae746bb0acc1f1fc1c76, type: 3}
   m_Name: StartBlock
   m_EditorClassIdentifier: Assembly-CSharp::BlockData
+  <Cur_Material>k__BackingField: {fileID: 2100000, guid: 31f509b564f05b74e9c8b97599af3d06, type: 2}
   <Model>k__BackingField: {fileID: 5299624262489372774, guid: 9e6a158965a733a4b9b34f5d73d161e8, type: 3}

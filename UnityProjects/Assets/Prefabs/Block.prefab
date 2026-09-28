@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddcde2c2b11e6b4c920e91bde2e0065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Block
+  positiveMaterial: {fileID: 2100000, guid: 0b97df06a91436b449ad633f98e16e79, type: 2}
+  negativeMaterial: {fileID: 2100000, guid: 0415781c414b714408eed2fecc197879, type: 2}

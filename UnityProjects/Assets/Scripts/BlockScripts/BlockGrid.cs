@@ -33,7 +33,7 @@ public class BlockGrid: MonoBehaviour
         foreach (var p in allBlockPositions)
         {
             (int x, int y, int z) = WorldToGridCell(p);
-            grid[x, y, z].setBlock(block);
+            grid[x, y, z].SetBlock(block);
         } 
     }
     public bool CanBuild(List<Vector3> allBlockPositions)
@@ -71,13 +71,37 @@ public class BlockGrid: MonoBehaviour
             Gizmos.DrawLine(start, end);
         }
     }
+    public Block GetBlockFromGrid(Vector3 point)
+    {
+        (int x, int y, int z) = WorldToGridCell(point);
+        if (x < 0 || x >= width || y < 0 || y >= height || z < 0 || z >= depth) return null;
+        return grid[x, y, z].GetBlock();
+    }
+
+    public void DestroyBlock(Block b)
+    {
+        for (int x = 0; x < grid.GetLength(0); x++)
+        {
+            for (int y = 0; y < grid.GetLength(1); y++)
+            {
+                for (int z = 0; z < grid.GetLength(2); z++)
+                {
+                    if (grid[x, y, z].GetBlock() == b)
+                    {
+                        grid[x, y, z] = new();
+                    }
+                }
+            }
+        }
+        Destroy(b.gameObject);
+    }
 }
 
 public class BlockGridCell
 {
     private Block block;
 
-    public void setBlock(Block block)
+    public void  SetBlock(Block block)
     {
         this.block = block;
     }
@@ -85,5 +109,10 @@ public class BlockGridCell
     public bool IsEmpty()
     {
         return block == null;
+    }
+
+    public Block GetBlock()
+    {
+        return block;
     }
 }
