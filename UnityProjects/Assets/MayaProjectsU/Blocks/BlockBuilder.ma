@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: BlockBuilder.ma
-//Last modified: Mon, Sep 28, 2026 03:49:24 PM
+//Last modified: Mon, Sep 28, 2026 04:41:36 PM
 //Codeset: 1252
 file -rdi 1 -ns "BaseBlock" -rfn "BaseBlockRN" -op "v=0;" -typ "mayaAscii" "C:/Users/orion/Documents/UVU/UVU_AGD_PORTFOLIO/UnityProjects/Assets/MayaProjectsU//BaseBlock.ma";
 file -rdi 1 -ns "StraightBlock" -rfn "StraightBlockRN" -op "v=0;" -typ "mayaAscii"
@@ -29,12 +29,12 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "B1C1BA27-47E5-E25C-AA58-AA8A99E9CA9D";
+fileInfo "UUID" "E1E51F6A-4E19-5CDD-C9C9-F7961284D814";
 createNode transform -s -n "persp";
 	rename -uid "020023AB-45A3-AA35-3BA7-33BADC4D793E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.742810600027738 9.8589830588954879 -2.2984791806848999 ;
-	setAttr ".r" -type "double3" -29.400000002296874 1884.3999999996727 0 ;
+	setAttr ".t" -type "double3" 14.213360381832318 -0.3792708721998288 0.72170315797438533 ;
+	setAttr ".r" -type "double3" 7.199999999872535 1874.3999999994896 -1.4783935756786404e-15 ;
 	setAttr ".rpt" -type "double3" -4.9855671787499347e-16 8.5711501074332563e-17 9.4833820226725521e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4AFF1A20-417F-AA9F-89FA-429B3F798E6E";
@@ -4069,9 +4069,9 @@ createNode mesh -n "polySurfaceShape1" -p "StraightBlock2";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "23A06D9C-48E0-AECB-7D2B-499C8B9F64DE";
-	setAttr -s 5 ".lnk";
-	setAttr -s 5 ".slnk";
+	rename -uid "5D3D52E2-4F1F-4336-B0BC-2AAB522DB71B";
+	setAttr -s 7 ".lnk";
+	setAttr -s 7 ".slnk";
 createNode UsdDefaultSettings -n "UsdDefaultRenderSettings";
 	rename -uid "C5D7EE0C-43BC-2A30-B793-7E9E1FAB1FAB";
 	setAttr ".srl" -type "string" "#usda 1.0\n(\n    renderSettingsPrimPath = \"/Render/SceneRenderSettings\"\n)\n\ndef Scope \"Render\"\n{\n    def RenderSettings \"SceneRenderSettings\"\n    {\n        custom string adskUsd:externalCamera = \"|persp\" (\n            displayName = \"External Camera\"\n        )\n        rel products = </Render/BeautyProduct>\n    }\n\n    def RenderVar \"color\"\n    {\n        uniform string sourceName = \"color\"\n    }\n\n    def RenderProduct \"BeautyProduct\"\n    {\n        rel orderedVars = </Render/color>\n        token productName = \"./default.png\"\n    }\n}\n\n";
@@ -4079,16 +4079,16 @@ createNode UsdDefaultSettings -n "UsdDefaultRenderSettings";
 	setAttr ".asp" -type "string" "UsdDefaultRenderSettings,/Render/SceneRenderSettings";
 lockNode -l 1 ;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "CF9654ED-4415-2060-394C-1DBF7AAB4D6D";
+	rename -uid "B0FCEB07-4984-B636-4C92-4D88093AA598";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "62AE29F7-40EF-4C03-9633-AEBC5EECA122";
+	rename -uid "A2F57967-4D21-A977-3A2F-74AEB41A09C3";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "30F173EE-4AD6-36A9-56E2-CEAB11722EE7";
+	rename -uid "05C32A47-4F76-7C1C-2DCB-8BAEE5C97280";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D4EED51E-4319-9EF4-A2C8-CB8FA480FFCB";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "E59AC0C0-4844-7CDB-E762-D9A029726EF0";
+	rename -uid "160F23BA-4A33-C271-88B8-CAA7949BC448";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3019D994-4473-6D00-376F-4090979756E5";
 	setAttr ".g" yes;
@@ -4255,7 +4255,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 24 ".dsm";
+	setAttr -s 25 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 11 ".gn";
 select -ne :initialParticleSE;
@@ -4303,6 +4303,7 @@ connectAttr ":initialShadingGroup.mwc" "BaseBlockRN.phl[2]";
 connectAttr ":initialShadingGroup.mwc" "BaseBlockRN.phl[3]";
 connectAttr ":initialShadingGroup.mwc" "StraightBlockRN.phl[1]";
 connectAttr ":initialShadingGroup.mwc" "StraightBlockRN.phl[2]";
+connectAttr "sharedReferenceNode.sr" "StraightBlockRN.sr";
 connectAttr ":initialShadingGroup.mwc" "CurveBlockRN.phl[1]";
 connectAttr ":initialShadingGroup.mwc" "CurveBlockRN.phl[2]";
 connectAttr "sharedReferenceNode.sr" "StartBlockRN.sr";
