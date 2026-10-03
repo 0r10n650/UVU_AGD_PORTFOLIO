@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: WingedSnake.ma
-//Last modified: Fri, Oct 02, 2026 06:35:39 PM
+//Last modified: Fri, Oct 02, 2026 06:36:00 PM
 //Codeset: 1252
 requires maya "2027";
 requires -nodeType "polyPlatonic" "modelingToolkit" "0.0.0.0";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "56F09A72-4F7A-E4C1-5D0B-3F9F497A5301";
+fileInfo "UUID" "F9D01C76-4BA7-9D5B-62AA-37ADF2F3F139";
 createNode transform -s -n "persp";
 	rename -uid "045692A2-44C5-01AB-623A-44934B1BCC67";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -24.837188973259387 9.7574298103288726 16.877584664779501 ;
-	setAttr ".r" -type "double3" -16.20000000000298 -50.799999999999834 0 ;
+	setAttr ".t" -type "double3" 23.510929622544396 14.418409499711654 16.766634074998663 ;
+	setAttr ".r" -type "double3" -24.600000000003021 48.399999999999963 2.3952621698410483e-15 ;
 	setAttr ".rpt" -type "double3" 3.4102290027728807e-13 1.1589462870637685e-13 9.8078570264258598e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C8DD6EA3-4542-182B-E30E-32B5895A293B";
