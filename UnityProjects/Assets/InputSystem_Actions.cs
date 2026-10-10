@@ -146,7 +146,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false,
@@ -1098,11 +1098,11 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Building"",
+            ""name"": ""GameState"",
             ""id"": ""62b8cf88-d727-40cc-b45f-c03e04619dc3"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""ClearState"",
                     ""type"": ""Button"",
                     ""id"": ""779a59a1-34ab-463a-885c-bc8a5e70eeb3"",
                     ""expectedControlType"": """",
@@ -1112,9 +1112,59 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
-                    ""name"": ""ToggleDeleteMode"",
+                    ""name"": ""Click"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""30d0bc5c-83e3-4101-9c57-af1ff6a424e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""RightClick"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""452e5d54-fbb3-4809-9e94-18cce0f1e3e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""TriggerDeleteMode"",
                     ""type"": ""Button"",
                     ""id"": ""f471fc31-6ba4-4db3-befe-66274d2f036e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""ScrollCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""32245a3e-6e06-4b4a-a65a-6710923cbee1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""RotateCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fb431d9-67fe-4095-a1c3-912ac1097a3d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""PanCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""d3d722e9-87b0-42fa-a5e3-abd4cc419532"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1126,13 +1176,101 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""965ea337-e257-4fd1-9275-b050a7d3ac6a"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""ClearState"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9faa449-4846-456e-a28b-0ff69c41fb81"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bfd2c0a8-7bba-441c-b043-d429e0b8b9e6"",
+                    ""path"": ""<Pen>/tip"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""004ed18d-ec58-44c4-9f5e-600f51344ef2"",
+                    ""path"": ""<Touchscreen>/touch*/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0ba742f-4901-4f8f-a134-c7854616629f"",
+                    ""path"": ""<XRController>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""891ecf78-99bc-43c4-9d7f-01d98d6acc50"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""RightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""ScrollCamera"",
+                    ""id"": ""11a49079-0352-4c11-b745-40949a4651d0"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""7b16561d-7642-4d55-b992-a241cd8d953d"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""423edc79-4abe-46ef-bbbe-543fa0ceb98c"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -1141,9 +1279,75 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ToggleDeleteMode"",
+                    ""action"": ""TriggerDeleteMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""b939af61-9c1f-4d50-87ba-8d8dd1503518"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""e3d29ead-cac5-4960-bfec-5203c0ad327e"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""53033ff8-b6d3-4bbc-85c7-cc933d3d1dcf"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""df30b8d8-5353-4135-8746-e6b00205fedb"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PanCamera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""04590ed5-ec20-4d1a-8bdc-0cb4f6cbc568"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PanCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""f4fc949d-f4ce-4a3f-904a-8c4e80b927cb"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PanCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -1234,17 +1438,22 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // Building
-        m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
-        m_Building_Newaction = m_Building.FindAction("New action", throwIfNotFound: true);
-        m_Building_ToggleDeleteMode = m_Building.FindAction("ToggleDeleteMode", throwIfNotFound: true);
+        // GameState
+        m_GameState = asset.FindActionMap("GameState", throwIfNotFound: true);
+        m_GameState_ClearState = m_GameState.FindAction("ClearState", throwIfNotFound: true);
+        m_GameState_Click = m_GameState.FindAction("Click", throwIfNotFound: true);
+        m_GameState_RightClick = m_GameState.FindAction("RightClick", throwIfNotFound: true);
+        m_GameState_TriggerDeleteMode = m_GameState.FindAction("TriggerDeleteMode", throwIfNotFound: true);
+        m_GameState_ScrollCamera = m_GameState.FindAction("ScrollCamera", throwIfNotFound: true);
+        m_GameState_RotateCamera = m_GameState.FindAction("RotateCamera", throwIfNotFound: true);
+        m_GameState_PanCamera = m_GameState.FindAction("PanCamera", throwIfNotFound: true);
     }
 
     ~@GameControls()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, GameControls.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, GameControls.UI.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Building.enabled, "This will cause a leak and performance issues, GameControls.Building.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_GameState.enabled, "This will cause a leak and performance issues, GameControls.GameState.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1696,34 +1905,59 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
     /// </summary>
     public UIActions @UI => new UIActions(this);
 
-    // Building
-    private readonly InputActionMap m_Building;
-    private List<IBuildingActions> m_BuildingActionsCallbackInterfaces = new List<IBuildingActions>();
-    private readonly InputAction m_Building_Newaction;
-    private readonly InputAction m_Building_ToggleDeleteMode;
+    // GameState
+    private readonly InputActionMap m_GameState;
+    private List<IGameStateActions> m_GameStateActionsCallbackInterfaces = new List<IGameStateActions>();
+    private readonly InputAction m_GameState_ClearState;
+    private readonly InputAction m_GameState_Click;
+    private readonly InputAction m_GameState_RightClick;
+    private readonly InputAction m_GameState_TriggerDeleteMode;
+    private readonly InputAction m_GameState_ScrollCamera;
+    private readonly InputAction m_GameState_RotateCamera;
+    private readonly InputAction m_GameState_PanCamera;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Building".
+    /// Provides access to input actions defined in input action map "GameState".
     /// </summary>
-    public struct BuildingActions
+    public struct GameStateActions
     {
         private @GameControls m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public BuildingActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public GameStateActions(@GameControls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Building/Newaction".
+        /// Provides access to the underlying input action "GameState/ClearState".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Building_Newaction;
+        public InputAction @ClearState => m_Wrapper.m_GameState_ClearState;
         /// <summary>
-        /// Provides access to the underlying input action "Building/ToggleDeleteMode".
+        /// Provides access to the underlying input action "GameState/Click".
         /// </summary>
-        public InputAction @ToggleDeleteMode => m_Wrapper.m_Building_ToggleDeleteMode;
+        public InputAction @Click => m_Wrapper.m_GameState_Click;
+        /// <summary>
+        /// Provides access to the underlying input action "GameState/RightClick".
+        /// </summary>
+        public InputAction @RightClick => m_Wrapper.m_GameState_RightClick;
+        /// <summary>
+        /// Provides access to the underlying input action "GameState/TriggerDeleteMode".
+        /// </summary>
+        public InputAction @TriggerDeleteMode => m_Wrapper.m_GameState_TriggerDeleteMode;
+        /// <summary>
+        /// Provides access to the underlying input action "GameState/ScrollCamera".
+        /// </summary>
+        public InputAction @ScrollCamera => m_Wrapper.m_GameState_ScrollCamera;
+        /// <summary>
+        /// Provides access to the underlying input action "GameState/RotateCamera".
+        /// </summary>
+        public InputAction @RotateCamera => m_Wrapper.m_GameState_RotateCamera;
+        /// <summary>
+        /// Provides access to the underlying input action "GameState/PanCamera".
+        /// </summary>
+        public InputAction @PanCamera => m_Wrapper.m_GameState_PanCamera;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Building; }
+        public InputActionMap Get() { return m_Wrapper.m_GameState; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -1731,9 +1965,9 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="BuildingActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="GameStateActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(BuildingActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(GameStateActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -1741,17 +1975,32 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="BuildingActions" />
-        public void AddCallbacks(IBuildingActions instance)
+        /// <seealso cref="GameStateActions" />
+        public void AddCallbacks(IGameStateActions instance)
         {
-            if (instance == null || m_Wrapper.m_BuildingActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_BuildingActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-            @ToggleDeleteMode.started += instance.OnToggleDeleteMode;
-            @ToggleDeleteMode.performed += instance.OnToggleDeleteMode;
-            @ToggleDeleteMode.canceled += instance.OnToggleDeleteMode;
+            if (instance == null || m_Wrapper.m_GameStateActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_GameStateActionsCallbackInterfaces.Add(instance);
+            @ClearState.started += instance.OnClearState;
+            @ClearState.performed += instance.OnClearState;
+            @ClearState.canceled += instance.OnClearState;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @RightClick.started += instance.OnRightClick;
+            @RightClick.performed += instance.OnRightClick;
+            @RightClick.canceled += instance.OnRightClick;
+            @TriggerDeleteMode.started += instance.OnTriggerDeleteMode;
+            @TriggerDeleteMode.performed += instance.OnTriggerDeleteMode;
+            @TriggerDeleteMode.canceled += instance.OnTriggerDeleteMode;
+            @ScrollCamera.started += instance.OnScrollCamera;
+            @ScrollCamera.performed += instance.OnScrollCamera;
+            @ScrollCamera.canceled += instance.OnScrollCamera;
+            @RotateCamera.started += instance.OnRotateCamera;
+            @RotateCamera.performed += instance.OnRotateCamera;
+            @RotateCamera.canceled += instance.OnRotateCamera;
+            @PanCamera.started += instance.OnPanCamera;
+            @PanCamera.performed += instance.OnPanCamera;
+            @PanCamera.canceled += instance.OnPanCamera;
         }
 
         /// <summary>
@@ -1760,24 +2009,39 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="BuildingActions" />
-        private void UnregisterCallbacks(IBuildingActions instance)
+        /// <seealso cref="GameStateActions" />
+        private void UnregisterCallbacks(IGameStateActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-            @ToggleDeleteMode.started -= instance.OnToggleDeleteMode;
-            @ToggleDeleteMode.performed -= instance.OnToggleDeleteMode;
-            @ToggleDeleteMode.canceled -= instance.OnToggleDeleteMode;
+            @ClearState.started -= instance.OnClearState;
+            @ClearState.performed -= instance.OnClearState;
+            @ClearState.canceled -= instance.OnClearState;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @RightClick.started -= instance.OnRightClick;
+            @RightClick.performed -= instance.OnRightClick;
+            @RightClick.canceled -= instance.OnRightClick;
+            @TriggerDeleteMode.started -= instance.OnTriggerDeleteMode;
+            @TriggerDeleteMode.performed -= instance.OnTriggerDeleteMode;
+            @TriggerDeleteMode.canceled -= instance.OnTriggerDeleteMode;
+            @ScrollCamera.started -= instance.OnScrollCamera;
+            @ScrollCamera.performed -= instance.OnScrollCamera;
+            @ScrollCamera.canceled -= instance.OnScrollCamera;
+            @RotateCamera.started -= instance.OnRotateCamera;
+            @RotateCamera.performed -= instance.OnRotateCamera;
+            @RotateCamera.canceled -= instance.OnRotateCamera;
+            @PanCamera.started -= instance.OnPanCamera;
+            @PanCamera.performed -= instance.OnPanCamera;
+            @PanCamera.canceled -= instance.OnPanCamera;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BuildingActions.UnregisterCallbacks(IBuildingActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="GameStateActions.UnregisterCallbacks(IGameStateActions)" />.
         /// </summary>
-        /// <seealso cref="BuildingActions.UnregisterCallbacks(IBuildingActions)" />
-        public void RemoveCallbacks(IBuildingActions instance)
+        /// <seealso cref="GameStateActions.UnregisterCallbacks(IGameStateActions)" />
+        public void RemoveCallbacks(IGameStateActions instance)
         {
-            if (m_Wrapper.m_BuildingActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_GameStateActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -1787,21 +2051,21 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="BuildingActions.AddCallbacks(IBuildingActions)" />
-        /// <seealso cref="BuildingActions.RemoveCallbacks(IBuildingActions)" />
-        /// <seealso cref="BuildingActions.UnregisterCallbacks(IBuildingActions)" />
-        public void SetCallbacks(IBuildingActions instance)
+        /// <seealso cref="GameStateActions.AddCallbacks(IGameStateActions)" />
+        /// <seealso cref="GameStateActions.RemoveCallbacks(IGameStateActions)" />
+        /// <seealso cref="GameStateActions.UnregisterCallbacks(IGameStateActions)" />
+        public void SetCallbacks(IGameStateActions instance)
         {
-            foreach (var item in m_Wrapper.m_BuildingActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_GameStateActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_BuildingActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_GameStateActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="BuildingActions" /> instance referencing this action map.
+    /// Provides a new <see cref="GameStateActions" /> instance referencing this action map.
     /// </summary>
-    public BuildingActions @Building => new BuildingActions(this);
+    public GameStateActions @GameState => new GameStateActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -2017,25 +2281,60 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
     }
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Building" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "GameState" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="BuildingActions.AddCallbacks(IBuildingActions)" />
-    /// <seealso cref="BuildingActions.RemoveCallbacks(IBuildingActions)" />
-    public interface IBuildingActions
+    /// <seealso cref="GameStateActions.AddCallbacks(IGameStateActions)" />
+    /// <seealso cref="GameStateActions.RemoveCallbacks(IGameStateActions)" />
+    public interface IGameStateActions
     {
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "ClearState" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnClearState(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "ToggleDeleteMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Click" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnToggleDeleteMode(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RightClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "TriggerDeleteMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTriggerDeleteMode(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ScrollCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnScrollCamera(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RotateCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotateCamera(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PanCamera" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPanCamera(InputAction.CallbackContext context);
     }
 }

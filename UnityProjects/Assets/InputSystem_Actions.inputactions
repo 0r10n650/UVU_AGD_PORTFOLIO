@@ -60,7 +60,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
@@ -1012,11 +1012,11 @@
             ]
         },
         {
-            "name": "Building",
+            "name": "GameState",
             "id": "62b8cf88-d727-40cc-b45f-c03e04619dc3",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "ClearState",
                     "type": "Button",
                     "id": "779a59a1-34ab-463a-885c-bc8a5e70eeb3",
                     "expectedControlType": "",
@@ -1026,9 +1026,59 @@
                     "priority": 0
                 },
                 {
-                    "name": "ToggleDeleteMode",
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "30d0bc5c-83e3-4101-9c57-af1ff6a424e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "RightClick",
+                    "type": "PassThrough",
+                    "id": "452e5d54-fbb3-4809-9e94-18cce0f1e3e4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "TriggerDeleteMode",
                     "type": "Button",
                     "id": "f471fc31-6ba4-4db3-befe-66274d2f036e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "ScrollCamera",
+                    "type": "Button",
+                    "id": "32245a3e-6e06-4b4a-a65a-6710923cbee1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "RotateCamera",
+                    "type": "Button",
+                    "id": "1fb431d9-67fe-4095-a1c3-912ac1097a3d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "PanCamera",
+                    "type": "Button",
+                    "id": "d3d722e9-87b0-42fa-a5e3-abd4cc419532",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1040,13 +1090,101 @@
                 {
                     "name": "",
                     "id": "965ea337-e257-4fd1-9275-b050a7d3ac6a",
-                    "path": "",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ClearState",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9faa449-4846-456e-a28b-0ff69c41fb81",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bfd2c0a8-7bba-441c-b043-d429e0b8b9e6",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "004ed18d-ec58-44c4-9f5e-600f51344ef2",
+                    "path": "<Touchscreen>/touch*/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0ba742f-4901-4f8f-a134-c7854616629f",
+                    "path": "<XRController>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "891ecf78-99bc-43c4-9d7f-01d98d6acc50",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "ScrollCamera",
+                    "id": "11a49079-0352-4c11-b745-40949a4651d0",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollCamera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "7b16561d-7642-4d55-b992-a241cd8d953d",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "423edc79-4abe-46ef-bbbe-543fa0ceb98c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -1055,9 +1193,75 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ToggleDeleteMode",
+                    "action": "TriggerDeleteMode",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "b939af61-9c1f-4d50-87ba-8d8dd1503518",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCamera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "e3d29ead-cac5-4960-bfec-5203c0ad327e",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "53033ff8-b6d3-4bbc-85c7-cc933d3d1dcf",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "df30b8d8-5353-4135-8746-e6b00205fedb",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PanCamera",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "04590ed5-ec20-4d1a-8bdc-0cb4f6cbc568",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PanCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "f4fc949d-f4ce-4a3f-904a-8c4e80b927cb",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PanCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
