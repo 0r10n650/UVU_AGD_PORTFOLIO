@@ -48,26 +48,26 @@ public class BlockGrid: MonoBehaviour
     }
     private (int x, int y, int z) WorldToGridCell(Vector3 worldPosition)
     {
-        int x = Mathf.FloorToInt((worldPosition - transform.position).x / BlockSystem.cellSize);
-        int y = Mathf.FloorToInt((worldPosition - transform.position).y / (BlockSystem.cellSize / 2));
-        int z = Mathf.FloorToInt((worldPosition - transform.position).z / BlockSystem.cellSize);
+        int x = Mathf.FloorToInt((worldPosition - transform.position).x / BlockRaycastSystem.cellSize);
+        int y = Mathf.FloorToInt((worldPosition - transform.position).y / (BlockRaycastSystem.cellSize / 2));
+        int z = Mathf.FloorToInt((worldPosition - transform.position).z / BlockRaycastSystem.cellSize);
         return (x, y, z);
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        if (BlockSystem.cellSize <= 0 || width <= 0 || depth <= 0) return;
+        if (BlockRaycastSystem.cellSize <= 0 || width <= 0 || depth <= 0) return;
         Vector3 origin = transform.position;
         for (int z = 0; z <= depth; z++)
         {
-            Vector3 start = origin + new Vector3(0, 0.01f, z * BlockSystem.cellSize);
-            Vector3 end = origin + new Vector3(width * BlockSystem.cellSize, 0.01f, z * BlockSystem.cellSize);
+            Vector3 start = origin + new Vector3(0, 0.01f, z * BlockRaycastSystem.cellSize);
+            Vector3 end = origin + new Vector3(width * BlockRaycastSystem.cellSize, 0.01f, z * BlockRaycastSystem.cellSize);
             Gizmos.DrawLine(start, end);
         }
         for (int x = 0; x <= width; x++)
         {
-            Vector3 start = origin + new Vector3(x * BlockSystem.cellSize, 0.01f, 0);
-            Vector3 end = origin + new Vector3(x * BlockSystem.cellSize, 0.01f, depth * BlockSystem.cellSize);
+            Vector3 start = origin + new Vector3(x * BlockRaycastSystem.cellSize, 0.01f, 0);
+            Vector3 end = origin + new Vector3(x * BlockRaycastSystem.cellSize, 0.01f, depth * BlockRaycastSystem.cellSize);
             Gizmos.DrawLine(start, end);
         }
     }
