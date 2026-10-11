@@ -6,6 +6,7 @@ public class BuildingSystem :  BlockRaycastSystem
     private BlockPreview preview;
     [SerializeField] private BlockPreview previewPrefab;
     [SerializeField] private Block blockPrefab;
+    public bool HasSelection => preview != null;
     private void Update()
     {
         if (GameStateManager.Instance.GameState == GameStateManager.GameStates.Building)

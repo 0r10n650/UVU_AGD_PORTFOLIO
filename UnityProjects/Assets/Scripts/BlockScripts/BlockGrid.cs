@@ -6,10 +6,10 @@ using Unity.VisualScripting;
 
 public class BlockGrid: MonoBehaviour
 {
-    [SerializeField] private int width;
-    [SerializeField] private int depth;
+    [SerializeField] public int width;
+    [SerializeField] public int depth;
 
-    [SerializeField] private int height;
+    [SerializeField] public int height;
 
     private BlockGridCell[,,] grid;
 
