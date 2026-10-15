@@ -627,6 +627,26 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""PlaceBlock"",
+                    ""type"": ""Button"",
+                    ""id"": ""5448b7d7-cac8-4cdb-9926-f22c40f4a7b1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""9dcc485f-ddbb-48f5-9d12-0746e19c37c7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -638,6 +658,28 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""OpenBuildWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5fa7edc1-2709-4883-b149-1705ddf7ddf1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceBlock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae69a14e-f532-4b13-825b-b9c6746f34cd"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -682,7 +724,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""63b9477b-655e-4066-993a-606a7c427efa"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -693,7 +735,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""180877aa-1461-4f06-a2a9-e99bc4f62296"",
-                    ""path"": ""<Mouse>/middleButton"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -864,6 +906,8 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         // BuildControls
         m_BuildControls = asset.FindActionMap("BuildControls", throwIfNotFound: true);
         m_BuildControls_OpenBuildWheel = m_BuildControls.FindAction("OpenBuildWheel", throwIfNotFound: true);
+        m_BuildControls_PlaceBlock = m_BuildControls.FindAction("PlaceBlock", throwIfNotFound: true);
+        m_BuildControls_Rotate = m_BuildControls.FindAction("Rotate", throwIfNotFound: true);
         // CameraControls
         m_CameraControls = asset.FindActionMap("CameraControls", throwIfNotFound: true);
         m_CameraControls_PanCamera = m_CameraControls.FindAction("PanCamera", throwIfNotFound: true);
@@ -1153,6 +1197,8 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_BuildControls;
     private List<IBuildControlsActions> m_BuildControlsActionsCallbackInterfaces = new List<IBuildControlsActions>();
     private readonly InputAction m_BuildControls_OpenBuildWheel;
+    private readonly InputAction m_BuildControls_PlaceBlock;
+    private readonly InputAction m_BuildControls_Rotate;
     /// <summary>
     /// Provides access to input actions defined in input action map "BuildControls".
     /// </summary>
@@ -1168,6 +1214,14 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "BuildControls/OpenBuildWheel".
         /// </summary>
         public InputAction @OpenBuildWheel => m_Wrapper.m_BuildControls_OpenBuildWheel;
+        /// <summary>
+        /// Provides access to the underlying input action "BuildControls/PlaceBlock".
+        /// </summary>
+        public InputAction @PlaceBlock => m_Wrapper.m_BuildControls_PlaceBlock;
+        /// <summary>
+        /// Provides access to the underlying input action "BuildControls/Rotate".
+        /// </summary>
+        public InputAction @Rotate => m_Wrapper.m_BuildControls_Rotate;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1197,6 +1251,12 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @OpenBuildWheel.started += instance.OnOpenBuildWheel;
             @OpenBuildWheel.performed += instance.OnOpenBuildWheel;
             @OpenBuildWheel.canceled += instance.OnOpenBuildWheel;
+            @PlaceBlock.started += instance.OnPlaceBlock;
+            @PlaceBlock.performed += instance.OnPlaceBlock;
+            @PlaceBlock.canceled += instance.OnPlaceBlock;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
         }
 
         /// <summary>
@@ -1211,6 +1271,12 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
             @OpenBuildWheel.started -= instance.OnOpenBuildWheel;
             @OpenBuildWheel.performed -= instance.OnOpenBuildWheel;
             @OpenBuildWheel.canceled -= instance.OnOpenBuildWheel;
+            @PlaceBlock.started -= instance.OnPlaceBlock;
+            @PlaceBlock.performed -= instance.OnPlaceBlock;
+            @PlaceBlock.canceled -= instance.OnPlaceBlock;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
         }
 
         /// <summary>
@@ -1637,6 +1703,20 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOpenBuildWheel(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PlaceBlock" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPlaceBlock(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRotate(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "CameraControls" which allows adding and removing callbacks.

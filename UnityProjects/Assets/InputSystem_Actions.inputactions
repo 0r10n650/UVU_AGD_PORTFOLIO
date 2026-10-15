@@ -541,6 +541,26 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "PlaceBlock",
+                    "type": "Button",
+                    "id": "5448b7d7-cac8-4cdb-9926-f22c40f4a7b1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Value",
+                    "id": "9dcc485f-ddbb-48f5-9d12-0746e19c37c7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -552,6 +572,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "OpenBuildWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5fa7edc1-2709-4883-b149-1705ddf7ddf1",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaceBlock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae69a14e-f532-4b13-825b-b9c6746f34cd",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -596,7 +638,7 @@
                 {
                     "name": "",
                     "id": "63b9477b-655e-4066-993a-606a7c427efa",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -607,7 +649,7 @@
                 {
                     "name": "",
                     "id": "180877aa-1461-4f06-a2a9-e99bc4f62296",
-                    "path": "<Mouse>/middleButton",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

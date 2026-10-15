@@ -61,7 +61,6 @@ public class CameraMovementSystem : MonoBehaviour
     {
         if (curState == state.Rotate)
         {
-            Debug.Log("Mouse X: " + Input.GetAxis("Mouse X"));
             yaw += Input.GetAxis("Mouse X") * rotationSpeed;
             pitch -= Input.GetAxis("Mouse Y") * rotationSpeed;
             pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
@@ -75,7 +74,6 @@ public class CameraMovementSystem : MonoBehaviour
         }
         if (curState == state.Pan)
         {
-            Debug.Log("GetAxis X: " + Input.GetAxis("Mouse X") + " | right vector: " + (cam.transform.right * Input.GetAxis("Mouse X") * panSpeed));
             Vector3 right = cam.transform.right * Input.GetAxis("Mouse X") * panSpeed;
             Vector3 up = cam.transform.up * Input.GetAxis("Mouse Y") * panSpeed;
             Vector3 spot = pivot.position - (right + up);
