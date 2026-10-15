@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: Door.ma
-//Last modified: Wed, Oct 14, 2026 08:19:56 PM
+//Last modified: Thu, Oct 15, 2026 12:12:37 PM
 //Codeset: 1252
 requires maya "2027";
 requires -nodeType "UsdDefaultSettings" -dataType "pxrUsdStageData" "mayaUsdPlugin" "0.37.0";
@@ -11,19 +11,19 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "411FE8E3-4570-AD18-37D8-43A6BBB08EAE";
+fileInfo "UUID" "27098ACE-4FF5-D214-DF87-979054664FC7";
 createNode transform -s -n "persp";
 	rename -uid "F7399955-4C72-8EA5-9BE6-1A81922BB47D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.7115786335468353 8.6592369064744492 -16.571260275051166 ;
-	setAttr ".r" -type "double3" -21.938352729017694 -536.59999999976708 0 ;
+	setAttr ".t" -type "double3" 15.712189347901406 11.071982838318435 8.1000460575176394 ;
+	setAttr ".r" -type "double3" -20.138352729015715 -657.39999999976078 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C5298CCB-4D81-D5C2-D003-7D9FA42E6374";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 0.001;
 	setAttr ".fcp" 100;
-	setAttr ".coi" 16.336285514906471;
+	setAttr ".coi" 20.251927503395798;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2063,7 +2063,7 @@ createNode mesh -n "DoorShape" -p "Door";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "7D39F90C-4287-2F1A-93A6-7C8A6C95FD5B";
+	rename -uid "CA184511-4078-5F23-8A3E-DDA1A9E89F23";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode UsdDefaultSettings -n "UsdDefaultRenderSettings";
@@ -2073,16 +2073,16 @@ createNode UsdDefaultSettings -n "UsdDefaultRenderSettings";
 	setAttr ".asp" -type "string" "UsdDefaultRenderSettings,/Render/SceneRenderSettings";
 lockNode -l 1 ;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "5367EA6E-4463-340A-45A7-74A192A4E80C";
+	rename -uid "F944ABC4-41BE-08EC-362D-DC89EC69485D";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "13E45B44-4A53-1EB2-813C-CF940353C64C";
+	rename -uid "D75E76A8-4CCE-6386-A78B-C1A067C5CD63";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "0837030B-47CE-1071-A1E4-CD94A93058A0";
+	rename -uid "8D70C17F-470C-7D00-6FA1-06AC433230E8";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "8E4D651A-4D19-F974-EB83-1C8591F51BFA";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CA40B432-4114-C8D0-3DB4-9FB1AAC99A08";
+	rename -uid "36D8DD36-45CC-9BBE-584F-C78CF14091CC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "89581B29-445A-EE10-AB61-9DA7D13CE9BC";
 	setAttr ".g" yes;
