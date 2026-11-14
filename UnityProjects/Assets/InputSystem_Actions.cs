@@ -711,12 +711,12 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""ScrollCamera"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""11037531-07da-4c78-8e5e-c13fdbfe705a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false,
+                    ""initialStateCheck"": true,
                     ""priority"": 0
                 }
             ],
@@ -724,7 +724,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""63b9477b-655e-4066-993a-606a7c427efa"",
-                    ""path"": ""<Mouse>/middleButton"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -735,7 +735,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""180877aa-1461-4f06-a2a9-e99bc4f62296"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -746,7 +746,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ec47b928-8160-44a1-9ea3-46502b7ce6f6"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

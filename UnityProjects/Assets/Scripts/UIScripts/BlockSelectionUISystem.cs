@@ -10,6 +10,7 @@ public class BlockSelectionUISystem: MonoBehaviour
     [SerializeField] private List<BlockData> blocks;
     [SerializeField] private BuildingSystem buildingSystem;
     [SerializeField] private Image previewImage;
+    [SerializeField] private BlockData previewData;
     private List<BlockButton> spawnedButtons = new List<BlockButton>();
    
     
@@ -32,14 +33,15 @@ public class BlockSelectionUISystem: MonoBehaviour
     private void ShowPreview(BlockData data)
     {
         previewImage.sprite = data.image;
+        previewData = data;
     }
     private void DisablePreview()
     {
         previewImage.sprite = null;
+        previewData = null;
     }
     private void SelectBlock(BlockData data)
     {
-        buildingSystem.SetSelectedBlock(data, Vector3.zero);
         HideWheel();
     }
     private void HideWheel(InputAction.CallbackContext context)
@@ -48,6 +50,10 @@ public class BlockSelectionUISystem: MonoBehaviour
     }
     private void HideWheel()
     {
+        if (previewData)
+        {
+            buildingSystem.SetSelectedBlock(previewData, Vector3.zero);
+        }
         foreach (BlockButton blockButton in spawnedButtons)
         {
             blockButton.OnHovered -= ShowPreview;
@@ -63,6 +69,7 @@ public class BlockSelectionUISystem: MonoBehaviour
         {
             GameStateManager.Instance.SetState(GameStateManager.GameStates.None);
         }
+        previewData = null;
     }
     public void DisplayButtons()
     {

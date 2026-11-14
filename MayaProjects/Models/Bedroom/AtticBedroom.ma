@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: AtticBedroom.ma
-//Last modified: Fri, Nov 13, 2026 07:04:45 PM
+//Last modified: Fri, Nov 13, 2026 07:05:17 PM
 //Codeset: 1252
 file -rdi 1 -ns "Monitor" -rfn "MonitorRN" -op "v=0;" -typ "mayaAscii" "C:/Users/orion/Documents/UVU/UVU_AGD_PORTFOLIO/MayaProjects//Models/Bedroom/Monitor.ma";
 file -rdi 1 -ns "Mouse" -rfn "MouseRN" -op "v=0;" -typ "mayaAscii" "C:/Users/orion/Documents/UVU/UVU_AGD_PORTFOLIO/MayaProjects//Models/Bedroom/Mouse.ma";
@@ -14,17 +14,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "9F90B7D6-4D29-9ADE-E531-599331D52063";
+fileInfo "UUID" "D4E3E595-428D-97A8-D8FA-B3AF984C4C22";
 createNode transform -s -n "persp";
 	rename -uid "F816514D-4624-BAF8-9C8E-68A76786E8B9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -11.147494586023814 4.7911637699656655 -3.7992086711268307 ;
+	setAttr ".t" -type "double3" -18.958418840522842 7.0621663342529084 -9.8579825776322707 ;
 	setAttr ".r" -type "double3" -12.938352728864061 592.2000000003203 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1B214FC1-4764-BB67-661D-F6B7C560D223";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 7.4478257306506315;
+	setAttr ".coi" 17.590642479792443;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

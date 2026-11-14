@@ -27,7 +27,7 @@ public class CameraMovementSystem : MonoBehaviour
     {
         Pan,
         Rotate,
-        Scroll,
+
         None
     }
 
@@ -51,7 +51,10 @@ public class CameraMovementSystem : MonoBehaviour
     }
     private void scrollCamera(InputAction.CallbackContext context)
     {
-        curState = state.Scroll;
+        Vector2 scrollAmount = context.ReadValue<Vector2>();
+
+        distance -= scrollAmount.y * zoomSpeed;
+        distance = Mathf.Clamp(distance, minDistance, maxDistance);
     }
     private void endMode(InputAction.CallbackContext context)
     {
@@ -66,11 +69,6 @@ public class CameraMovementSystem : MonoBehaviour
             pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
             pivot.localRotation = Quaternion.Euler(pitch, yaw, 0);
-        }
-        if (curState == state.Scroll)
-        {
-            distance -= Input.GetAxis("Mouse X") * zoomSpeed;
-            distance = Mathf.Clamp(distance, minDistance, maxDistance);
         }
         if (curState == state.Pan)
         {
