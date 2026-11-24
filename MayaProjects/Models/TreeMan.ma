@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: TreeMan.ma
-//Last modified: Tue, Nov 24, 2026 04:17:32 PM
+//Last modified: Tue, Nov 24, 2026 04:23:08 PM
 //Codeset: 1252
 requires maya "2027";
 requires -nodeType "UsdDefaultSettings" -dataType "pxrUsdStageData" "mayaUsdPlugin" "0.37.0";
@@ -14,23 +14,22 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202607171511-52c21617ee";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "87E39F43-4EBD-B7FA-CDFE-E0AEE6558032";
+fileInfo "UUID" "9D9EDFF8-4E5B-6D8D-0A1C-BA93BC5A57EB";
 createNode transform -s -n "persp";
 	rename -uid "0DE13798-4332-4664-0785-1595D2EA4579";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 8.3808065781830745 28.120025518987788 44.605335327904157 ;
-	setAttr ".r" -type "double3" 342.60000000086967 -353.19999999997907 -2.001929230860561e-16 ;
-	setAttr ".rp" -type "double3" 4.4408920985006262e-16 1.7763568394002505e-15 0 ;
-	setAttr ".rpt" -type "double3" -1.4781139603282337e-15 1.7429405175370195e-14 9.9866444700985036e-15 ;
+	setAttr ".t" -type "double3" 38.722614918048414 30.427042249589963 61.594348462726231 ;
+	setAttr ".r" -type "double3" -13.800000000000542 33.599999999999753 0 ;
+	setAttr ".rpt" -type "double3" -1.4574135628567879e-15 1.7416895619725628e-14 1.0085784702311078e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8B657957-4A94-61ED-E60D-628C33181C80";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 51.773353790605071;
+	setAttr ".coi" 75.996303325186389;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -13.840291863026946 15.218285677392766 -0.75121707008384131 ;
+	setAttr ".tp" -type "double3" -2.1191287040710449 12.29938125424087 0.12258255481719971 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "10258997-4A28-3CDF-4DCF-B1830C2453B8";
